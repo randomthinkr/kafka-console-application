@@ -1,0 +1,6 @@
+/.idea/
+/kafka-producer/target/
+/kafka-consumer/target/
+/kafka-consumer/kafka-consumer.iml
+/kafka-producer/kafka-producer.iml
+/kafka-console-application.iml

@@ -2,18 +2,13 @@ package dev.csv.buboyn.consumer;
 
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
-import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.ProducerRecord;
-import org.apache.kafka.common.KafkaException;
 
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
-import java.util.Optional;
 import java.util.Properties;
-import java.util.stream.IntStream;
 
-public class KafkaConsumerApplication {
+public class KafkaConsumerGroupApplication3 {
 
     public static void main(String[] args) {
 
@@ -21,7 +16,7 @@ public class KafkaConsumerApplication {
         properties.put("bootstrap.servers", "localhost:9092, localhost:9093, localhost:9094");
         properties.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         properties.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
-        properties.put("group.id", "test-consumer");
+        properties.put("group.id", "test-consumer-group");
 
         //consume a message!
         try (KafkaConsumer consumer = new KafkaConsumer(properties)) {

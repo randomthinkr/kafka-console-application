@@ -2,7 +2,6 @@ package dev.csv.buboyn.producer;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
-import org.apache.kafka.common.KafkaException;
 
 import java.util.Properties;
 import java.util.stream.IntStream;

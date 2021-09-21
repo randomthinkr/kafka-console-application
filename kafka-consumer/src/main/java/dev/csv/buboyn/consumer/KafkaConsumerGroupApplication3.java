@@ -18,6 +18,12 @@ public class KafkaConsumerGroupApplication3 {
         properties.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         properties.put("group.id", "test-consumer-group");
 
+        //handy consumer config
+//        properties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092, localhost:9093, localhost:9094");
+//        properties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
+//        properties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
+//        properties.put(ConsumerConfig.GROUP_ID_CONFIG, "test-consumer-group");
+
         //consume a message!
         try (KafkaConsumer consumer = new KafkaConsumer(properties)) {
             consumer.subscribe(List.of("myMultiReplicationFactorTopic"));

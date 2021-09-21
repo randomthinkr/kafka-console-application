@@ -1,6 +1,7 @@
 package dev.csv.buboyn.producer;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 
 import java.util.Properties;
@@ -14,6 +15,11 @@ public class KafkaProducerApplication {
         properties.put("bootstrap.servers", "localhost:9092, localhost:9093, localhost:9094");
         properties.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         properties.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+
+        //handy ProducerConfig
+//        properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092, localhost:9093, localhost:9094");
+//        properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
+//        properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
 
         //send a producerRecord (message)!
         try(KafkaProducer producer = new KafkaProducer(properties)) {

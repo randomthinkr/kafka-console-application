@@ -24,11 +24,16 @@ public class KafkaProducerApplication {
         //send a producerRecord (message)!
         try(KafkaProducer producer = new KafkaProducer(properties)) {
 
+//            IntStream.range(0, 20).forEach(i -> {
+//                ProducerRecord<String, String> producerRecord =
+//                        new ProducerRecord<>("myMultiReplicationFactorTopic", "Message: " + ++i);
+//                producer.send(producerRecord);
+//             });
             IntStream.range(0, 20).forEach(i -> {
                 ProducerRecord<String, String> producerRecord =
-                        new ProducerRecord<>("myMultiReplicationFactorTopic", "Message: " + ++i);
+                        new ProducerRecord<>("myTestTopic", "Message: " + ++i);
                 producer.send(producerRecord);
-             });
+            });
 
         }
         catch (Exception e){
